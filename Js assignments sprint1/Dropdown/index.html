@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+}
+</style>
+</head>
+<body>
+   
+<div class="container">
+  <h2>Multi-Level Dropdowns</h2>
+                                     
+  <div class="dropdown">
+    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">States
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+        <li><a tabindex="-1" href="#">Kerala</a></li>
+        <li><a tabindex="-1" href="#">Telangana</a></li>
+   
+      <li class="dropdown-submenu">
+        <a class="test" tabindex="-1" href="#">TamilNadu<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a tabindex="-1" href="#">Chennai</a></li>
+          <li><a tabindex="-1" href="#">Trichy</a></li>
+        <li class="dropdown-submenu">
+            <a class="test" href="#">Karnataka <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Chikmanglur</a></li>
+              <li><a href="#">Shimoga</a></li>
+        
+          
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
+</body>
+</html>
